@@ -186,15 +186,17 @@
   document.getElementById('printBtn').style.display = 'inline-block';
 });
 
-    function printResult() {
-      const printContent = document.getElementById("result").innerHTML;
-      const originalContent = document.body.innerHTML;
+function printResult() {
+  const printContent = document.getElementById("result").innerHTML;
+  const originalContent = document.body.innerHTML;
 
-      document.body.innerHTML = printContent;
-      window.print();
-      document.body.innerHTML = originalContent;
-      window.location.reload();
-    }
+  document.body.innerHTML = printContent;
+  window.print();
+  document.body.innerHTML = originalContent;
+
+  // Don't reload, instead re-show your app if needed
+   // optional only if you want to reset after print
+}
 
     function showContact() {
       document.getElementById('calculator-section').style.display = 'none';
